@@ -1,6 +1,6 @@
 # webpack에서 SVG를 리액트 컴포넌트로 사용하기 (feat. @svgr/webpack)
 
-라이브러리를 사용 안 하고 webpack에서 기존에 CRA 프로젝트에서 사용하던 것처럼 svg 파일을 리액트불컴포넌트로 불러오려고 했는데 잘 되지가 않는다.
+라이브러리를 사용 안 하고 webpack에서 기존에 CRA 프로젝트에서 사용하던 것처럼 svg 파일을 리액트 컴포넌트로 불러오려고 했는데 잘 되지가 않는다.
 
 ```javascript
 import { ReactComponent as AsteriskIcon } from '@/assets/icons/asterisk.svg';
@@ -12,7 +12,13 @@ import { ReactComponent as AsteriskIcon } from '@/assets/icons/asterisk.svg';
 
 docs도 아주 잘 되어있어 하라는대로 하면 아주 잘 된다.
 
+{% hint style="info" %}
+설정 환경 Webpack5 + React + Typescript
+{% endhint %}
 
+
+
+## svgr 라이브러리로 svg를 리액트 컴포넌트로 불러오기
 
 ### @svgr/webpack 설치
 
@@ -43,9 +49,9 @@ module: {
 ```
 ````
 
-svgr은 기본적으로 svg를 리액트 컴포넌트로 불러오기 때문에 `{ ReactComponent as RefreshIcon }` 구문으로 svg 파일을 불러올 필요 없다. **오히려 넣으면 에러가 난다.**
+svgr은 기본적으로 svg를 리액트 컴포넌트로 불러오기 때문에 `import { ReactComponent as ~ }` 구문으로 svg 파일을 불러올 필요 없다. **오히려 넣으면 에러가 난다.**
 
-추가 로더를 사용할 경우에만 ReactComponent as \~ 구문을 쓸 수 있는데, 그렇지 않고도 as xxx 형태로 가져오기 위해 `exportType` 옵션을   추가로 설정해준다.
+추가 로더를 사용할 경우에만 `import { ReactComponent as ~ }` 구문을 쓸 수 있는데, 그렇지 않고도 위 형태로 가져오기 위해 `exportType` 옵션을 추가로 설정해준다.
 
 만약 해당 옵션을 넣지 않는다면 svg를다음과 같이 불러와야한다. 해당 svg도 리액트 컴포넌트로 불러온 거긴 하지만 컴포넌트에 className 등을 부여할 수 없다.
 
@@ -68,9 +74,9 @@ declare module '*.svg' {
 }
 ```
 
-타입 스크립트를 사용하니까 svg 파일 타입을 선언해준다. `global.d.ts` , `common.d.ts` 등 본인이 관리하고 있는 `d.ts` 파일이면 된다.  위 코드 자체는 어디서 긁어온 것.
+타입 스크립트를 사용하니까 svg 파일 타입을 선언해준다. `global.d.ts` , `common.d.ts` 등 본인이 관리하고 있는 `d.ts` 파일이면 된다.
 
-또한 많은 블로그들에서 해당 타입을 지정하고 tsconfig.json 파일의 include에 해당 파일을 추가하라고 하는데, 설정한 `d.ts` 파일이 src 내부에 존재하면 굳이 추가할 필요 없다.
+또한 많은 블로그들에서 해당 타입을 지정하고 `tsconfig.json` 파일의 include에 해당 파일을 추가하라고 하는데, 설정한 `d.ts` 파일이 include로 지정한 src 폴더 내부에 존재하면 굳이 추가할 필요 없다.
 
 ```json
 {
@@ -99,7 +105,7 @@ declare module '*.svg' {
 
 초반에 설정된 svg width, height 크기대로 사용하려고 하면 상관 없지만, css의 개입이 들어갈 여지가 있는 경우 \<svg/> 태그내에 지정된 `width`와 `height`를 100%로 수정해준다.
 
-color의 경우 `fill="currentColor"`로 수정해준다.
+color도 수정할 여지가 있다면 `fill="currentColor"`로 수정해준다.
 
 100%로 지정했으니 처음에 불러오면 크기가 엄청 크게 나오는데 그건 css 값을 주어 조절해주자.
 
@@ -119,7 +125,7 @@ function Label({
 }: LabelProps) {
 
     return (
-        <div className={`${s.container} ${s[depthStyle]}`}>
+        <div className={`${s.container}`}>
             <label htmlFor={name} style={{ ...styleProps }}>
                 {name}
                 {isRequired && (
@@ -134,6 +140,75 @@ function Label({
 ```
 
 요로콤 이쁘게 asterisk 단 Label 컴포넌트 완성!
+
+
+
+
+
+## svg 리액트 컴포넌트와 일반 svg 파일 불러오기 같이 쓰기
+
+svg 파일을 굳이 리액트 컴포넌트가 아닌 svg 그 자체로 \<img/> 태그와 같이 사용하고 싶을 수도 있을터! 이 역시 공식 문서에 잘 설명이 되어있다.
+
+{% tabs %}
+{% tab title="webpack.config" %}
+```
+module: {
+        rules: [
+            {
+                test: /\.svg$/i,
+                type: 'asset',
+                resourceQuery: /url/,
+            },
+            {
+                test: /\.svg$/,
+                resourceQuery: { not: [/url/] },
+                use: {
+                    loader: '@svgr/webpack',
+                    options: {
+                        exportType: 'named',
+                    },
+                },
+            },
+        ],
+    },
+```
+{% endtab %}
+
+{% tab title="global.d.ts" %}
+```typescript
+declare module '*.svg?url' {
+    const content: any;
+    export default content;
+}
+
+declare module '*.svg' {
+    import React = require('react');
+
+    export const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>;
+    const src: string;
+    export default src;
+}
+```
+{% endtab %}
+
+{% tab title="example" %}
+{% code overflow="wrap" %}
+```typescript
+import AsteriskIcon1 from '@/assets/icons/asterisk.svg?url';
+import { ReactComponent as AsteriskIcon2 } from '@/assets/icons/asterisk.svg';
+
+<img src={AsteriskIcon1} />
+<AsteriskIcon2 className={s.icon} />
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+wepback에 추가 설정을 주어 `resourceQuery` 옵션으로  resoure 경로에 url 문자가 포함 되어있는지 아닌지에 따라 구분한다. 일반 svg 파일 사용을 위해 `global.d.ts`에도  `.svg?url` 에  대한 추가 정의를 해주면 완료!
+
+
+
+공식 문서 감사해요! 💗
 
 
 
