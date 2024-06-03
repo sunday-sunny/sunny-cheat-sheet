@@ -69,7 +69,7 @@ renderItem props로 항목을 커스텀하여 렌더링하면 가능
 
 100 \* 20 \* 10 \* 100 = 2,000,000 건의 파일을 렌더링할 때 걸린 시간 2.7초&#x20;
 
-<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
