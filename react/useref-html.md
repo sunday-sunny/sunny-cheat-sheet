@@ -1,8 +1,6 @@
----
-description: useRef를 사용하는 커스텀 훅에 원하는 HTML 타입으로 useRef 만들어 반환 받기
----
-
 # useRef에 제네릭으로 원하는 HTML 타입 넣기
+
+
 
 Dropdown, Selectbox 등에서 컴포넌트의 바깥 부분을 클릭하면 자동으로 컴포넌트를 닫히게 해주는 `useClickAway`라는 훅을 사용 중이었다.
 
