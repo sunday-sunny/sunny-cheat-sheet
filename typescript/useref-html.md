@@ -18,7 +18,7 @@ Type 'RefObject\<HTMLDivElement>' is not assignable to type 'LegacyRef\<HTMLButt
 
 `HTMLDivElement` 타입 ref에는 \<button> 태그에 있는 disabled, form, formAction 등의 property들이 없기 때문에 할당 할 수 없다는 에러가 난다.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% tabs %}
 {% tab title="useClickAway.tsx" %}
@@ -101,7 +101,7 @@ return (
 Type 'RefObject\<HTMLElement>' is not assignable to type 'LegacyRef\<HTMLButtonElement> | undefined'.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```typescript
 export default function useClickAway() {

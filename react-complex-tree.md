@@ -275,7 +275,7 @@ renderItem props로 항목을 커스텀하여 렌더링하면 가능
 
 그 이상의 데이터는 JSON 파일이 어마무시하게 커져 heap memory 초과로 불가능했다.
 
-<figure><img src=".gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
