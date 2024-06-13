@@ -5,6 +5,8 @@
   * [타입이 정의 되어있는 외부 라이브러리 type 사용](<React/타입이 정의 되어있는 외부 라이브러리 type 사용.md>)
   * [useRef에 제네릭으로 원하는 HTML 타입 넣기](react/useref-html.md)
   * [React Router 중첩 라우팅 404 Not Found](react/react-router-404-not-found.md)
+* [JavaScript](javascript/README.md)
+  * [map 함수에서 현재 배열을 인자로 받기](javascript/map.md)
 * [CSS](css/README.md)
   * [JSX에서 \<br/> 을 이용한 개행 처리](css/jsx-less-than-br-greater-than.md)
 * [Webpack](webpack/README.md)
