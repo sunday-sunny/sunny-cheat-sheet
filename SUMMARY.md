@@ -11,6 +11,7 @@
   * [타입이 정의 되어있는 외부 라이브러리 type 사용](typescript/type.md)
   * [useRef에 제네릭으로 원하는 HTML 타입 넣기](typescript/useref-html.md)
   * [reduce 함수 not assignable to parameter of type 'never'. 에러](typescript/reduce-not-assignable-to-parameter-of-type-never..md)
+  * [button에 onClick props 타입 정의하기](typescript/button-onclick-props.md)
 * [CSS](css/README.md)
   * [JSX에서 \<br/> 을 이용한 개행 처리](css/jsx-less-than-br-greater-than.md)
   * [flex 남는 공간 채우기](css/flex.md)
