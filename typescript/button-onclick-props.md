@@ -1,6 +1,6 @@
 # button에 onClick props 타입 정의하기
 
-자바스크립트에서 타입스크립트 마이그레이션 중 Button 컴포넌트에 onClick를 넘기려고이런저런 분투를 하다가 정리한 글.
+자바스크립트에서 타입스크립트 마이그레이션 중 Button 컴포넌트에 onClick를 넘기려고 이런저런 분투를 하다가 정리한 글.
 
 타입스크립트로 바꾸면서 onClick에 뭘 줘야할지 너무 헷갈려서 정리를 하게됐다. `MouseEventHandler<HTMLButtonElement>` 를 주면 된다고 해서 했는데 왜 onClick을 넘길 때 자꾸 에러가 날까.. 자바스크립트 때는 그냥 마구마구 넘겼던 거 같은데 왜 자꾸 에러가 나지 했다.&#x20;
 
@@ -172,7 +172,7 @@ const onClickRename = (e: MouseEvent<HTMLButtonElement>) => {
 
 #### 다른매개 변수 사용
 
-다른 매개 변수를 사용한다면? `onClickRename(asset.name)`로 넘기면  `(e)=>void` 형태가 아니라 함수가 실행된 결과의 타입(void)이 넘어가므로 정의했던 `(e) => void` 형태로 익명함수를 만들어서 넘겨준다. `onClickRename` 함수에서 e는 굳이 사용을 안하므로 익명함수의 인자에서 제외하긴 했다.
+다른 매개 변수를 사용한다면? `onClickRename(asset.name)`로 넘기면  `(e)=>void` 형태가 아니라 함수가 실행된 결과의 타입(void)이 넘어가므로 정의했던 `(e) => void` 형태로 익명 함수를 만들어서 넘겨준다. `onClickRename` 함수에서 e는 굳이 사용을 안하므로 익명 함수의 인자에서 제외하긴 했다.
 
 ```typescript
 const onClickRename = (assetType: string) => {
