@@ -52,9 +52,9 @@ const getRadioData = (settingItem: Setting, radioGroupName: string) => {
 };
 ```
 
-받는변수 타입은 Setting인데 넘어가는 타입은 `boolean | Setting` 이니 받을 수가 없는 것이다. boolean일 때는 해당 함수의 매개변수로 넘길 수 없기에 사용하는 쪽에서 에러가 난다.
+받는 변수 타입은 Setting인데 넘어가는 타입은 `boolean | Setting` 이니 받을 수가 없는 것이다. boolean일 때는 해당 함수의 매개변수로 넘길 수 없기에 사용하는 쪽에서 에러가 난다.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

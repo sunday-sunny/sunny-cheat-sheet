@@ -56,7 +56,7 @@ map 함수는 리액트에서 컴포넌트를 렌더링하느라 가장 많이 �
 
 호출한 배열을 받아 배열의 length로 목록카운트와 table 태그 row 병합에 사용하였다.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

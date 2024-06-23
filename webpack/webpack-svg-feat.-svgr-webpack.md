@@ -113,7 +113,7 @@ color도 수정할 여지가 있다면 `fill="currentColor"`로 수정해준다.
 
 ### svg import
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```typescript
 import { ReactComponent as AsteriskIcon } from '@/assets/icons/asterisk.svg';
