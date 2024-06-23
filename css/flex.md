@@ -4,7 +4,7 @@ InputCombination을 사용할 때마다 까먹어서 적어놓는 flex 남는 �
 
 Label과 Input 관련 컴포넌트를 props로 받아 콤보로 사용하는 컴포넌트가 있는데 매번 저 input 컴포넌트가 상위에 지정해놓은 width만큼 안 넓어지고 짧둥하게 만들어진다.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ```typescript
 return (
@@ -22,7 +22,7 @@ return (
 
 ### 방법1. flex-grow 사용
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 상위 태그에 flex 지정 후, 남은 여백을 채우고 싶은 컴포넌트에 `flex-grow: 1` 속성을 부여한다.
 

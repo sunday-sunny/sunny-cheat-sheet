@@ -14,6 +14,7 @@
   * [button에 onClick props 타입 정의하기](typescript/button-onclick-props.md)
   * [특정 컴포넌트 타입으로 props 타입 지정하기](typescript/props.md)
   * [키보드 이벤트 (space/Backspace)](typescript/space-backspace.md)
+  * [여러 타입이 섞여 있는 배열에서의 map 함수 사용](typescript/map.md)
 * [CSS](css/README.md)
   * [JSX에서 \<br/> 을 이용한 개행 처리](css/jsx-less-than-br-greater-than.md)
   * [flex 남는 공간 채우기](css/flex.md)

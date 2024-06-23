@@ -1,6 +1,6 @@
 # reduce 함수 not assignable to parameter of type 'never'. 에러
 
-나는 reduce 함수를 보통원본 배열에서 필요한 항목만 빼서 새로운 배열을 구성하는데 사용한다.
+나는 reduce 함수를 보통 원본 배열에서 필요한 항목만 빼서 새로운 배열을 구성하는데 사용한다.
 
 일반 자바스크립트에서 사용하는 것처럼 하니 바로 뜨는 에러.
 

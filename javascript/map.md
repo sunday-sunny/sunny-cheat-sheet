@@ -30,7 +30,7 @@ map 함수는 리액트에서 컴포넌트를 렌더링하느라 가장 많이 �
 
 하지만 현재 호출된 배열 자체가 필요하다면 세 번째 인자로 호출한 배열을 받아볼 수 있다.&#x20;
 
-다음은 filter 함수와 map 함수를 체이닝 하여 사용했을 때 필터링된 배열의 length가 필요하여 세 번째 인자로 받아 사용한 경우이다.
+다음은 filter 함수와 map 함수를 체이닝 하여 사용했을 때 필터링된 배열의 length가 필요하여 세 번째 인자로 받아 원본 배열을 받아 사용한 경우이다.
 
 ```typescript
 {fileTypeList
@@ -54,9 +54,9 @@ map 함수는 리액트에서 컴포넌트를 렌더링하느라 가장 많이 �
 
 
 
-호출한 배열을 받아 배열의 length로 확장자 목록 표시와 table 태그 row 병합에 사용하였다.
+호출한 배열을 받아 배열의 length로 목록카운트와 table 태그 row 병합에 사용하였다.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
