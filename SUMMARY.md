@@ -16,6 +16,7 @@
   * [키보드 이벤트 (space/Backspace)](typescript/space-backspace.md)
   * [여러 타입이 섞여 있는 배열에서의 map 함수 사용](typescript/map.md)
   * [useDebounce 적용 시 setTimeout 함수 타입](typescript/usedebounce-settimeout.md)
+  * [리액트) 아이콘, 태그를 넣을 수 있는 input 만들기](typescript/input.md)
 * [CSS](css/README.md)
   * [JSX에서 \<br/> 을 이용한 개행 처리](css/jsx-less-than-br-greater-than.md)
   * [flex 남는 공간 채우기](css/flex.md)
