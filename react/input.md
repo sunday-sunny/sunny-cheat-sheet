@@ -1,4 +1,4 @@
-# 리액트) 아이콘, 태그를 넣을 수 있는 input 만들기
+# 리액트:: 아이콘, 태그를 넣을 수 있는 input 만들기
 
 `<input/>` 태그를 커스텀하여 사용할 때, input 필드 안에  아이콘을 넣고 싶다면 아이콘을 `display: absolute` 등을 지정하여 위치를 조정하는 식을 많이 하곤 한다.
 
@@ -7,7 +7,7 @@
 
 이 때 `<div>`로 `<input>`과 아이콘을 감싸고 `<div>`가 input focus인 것처럼 작동하는 input을 만들어보자.
 
-
+<figure><img src="../.gitbook/assets/fake-input.gif" alt=""><figcaption></figcaption></figure>
 
 ### 컨셉
 
@@ -150,8 +150,6 @@ const TextField = forwardRef(
 
 
 원한다면 아이콘도, 태그도 넣을 수 있는 커스텀  input 컴포넌트 완성!
-
-<figure><img src="../.gitbook/assets/fake-input.gif" alt=""><figcaption></figcaption></figure>
 
 
 
